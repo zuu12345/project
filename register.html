@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+	
+	<!-- Bootstrap css File -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+    <!-- CSS File -->
+	<style>
+		.sideNav{
+			background-color: cadetblue;
+			color: white;
+			height: 600px;
+			
+		}
+		.head{
+			background-color: cadetblue;
+			height: 50px;
+		}
+		.footer{
+			background-color: cadetblue;
+			height: 50px;
+		}
+		ul li{
+			text-decoration: none;
+			list-style: none;
+			padding: 12px;
+			padding-left: 0;
+			padding-right: 0;
+			text-size-adjust: 12px;
+			padding-right: 0px;
+		}
+		ul li a{
+			color: white;
+		}
+		ul li a:hover{
+			color: goldenrod;
+		}
+        .inner h3{
+            color: red;
+        }
+	</style>
+	
+	
+</head>
+<body>
+	<div class="container-fluid">
+		
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-2 sideNav">
+				<h2 style="color: brown;">Dashbord</h2>
+				<ul>
+					<li><a href="index.html">Home</a> </li>
+                    <li><a href="dash.html">Dashbord</a> </li>
+                    <li><a href="viewPrisoner.html">View Prisoner</a> </li>
+					<li><a href="viewpolice.html">View Police</a></li>
+					<li><a href="register.html">Register Police</a></li>
+					<li><a href="prisoners.html">Register Prisoner</a></li>
+                    <li><a href="login.html">LogOut</a></li>
+				</ul>
+			</div>
+			<div class="col-md-10 content">
+				<div class="row head">
+						<div class="col-md-12">
+						</div>
+		
+				</div>
+                <div class="row inner">
+                    <div class="col-md-12">
+                       <h3>Control Panel | Reister New Police </h3> 
+                       <div class="row msq">
+                            {{msg}}
+                       </div>
+                        <form method="post" action="register" autocomplete="off" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+								<div class="col-xs-12 col-sm-4 col-md-4">
+                                    <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" name="fname" placeholder="Fatma" class="form-control" required="required">
+							        </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <div class="form-group">
+                                    <label>Midle Name</label>
+                                    <input type="text" name="mname" placeholder="Juma" class="form-control" required="required">
+							        </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" name="lname" placeholder="lly" class="form-control" required="required">
+							        </div>
+                                </div>
+                            </div>
+                            <div class="row">
+								<div class="col-xs-12 col-sm-3 col-md-3">
+                                    <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" name="phone" placeholder="0777344444" class="form-control" required="required">
+							        </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    <div class="form-group">
+                                    <label>Address</label>
+                                    <input type="text" name="address" placeholder="BUBUBU" class="form-control" required="required">
+							        </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    <div class="form-group">
+                                    <label>User Name</label>
+                                    <input type="text" name="user" placeholder="Fatu" class="form-control" required="required">
+							        </div>
+                                </div>
+                                <div  class="col-xs-12 col-sm-3 col-md-3">
+                                    <div class="form-group">
+                                        <label>Position</label>
+                                        <select name="position" class="form-control" required="required">
+                                            <option>Boss</option>
+                                            <option>Reception</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-8">
+                                    <input type="submit"  value="Submit" class="btn btn-success form-control" style="width: 100px;">
+                                    <input type="reset" name="" value="Reset" class="btn btn-info form-control" style="position: absolute;width: 100px;margin-left:5px;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+			
+			</div>
+		</div>
+		<div class="row footer">
+
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index-css/m-style.css">
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="header">
+			<div class="row top-row" style=" background-color: #AC7C59 ">
+				<div class="col-xs-2 col-sm-2 col-md-2">
+					<img src="images/smz.png" class="logo">
+				</div>
+				<div class="col-xs-8 col-sm-8 col-md-8">
+					<h1 class="sys-name">Prison Management System</h1>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2" style="text-align:right;">
+					<img src="images/smz.png" class="logo">
+				</div>
+			</div>
+			<div class="row" >
+				<nav class="navbar nav-section">
+					<div class="navbar-header">
+	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mymenu"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+	                </div>
+
+			    	<div class="collapse navbar-collapse" id="mymenu">
+						<ul class="nav navbar-nav" style="font-size: 17px;">
+				      		<li><a class="menu-tab" href="#">Home</a></li>
+				      		<li><a class="menu-tab" href="#system-doc">About</a></li>
+				      		<li><a class="menu-tab" href="#footer">Contact</a></li>
+				      		
+				    	</ul> <!-- LEFT MENU -->
+
+				    	<ul class="nav navbar-nav navbar-right">
+				     		<li><a class="menu-tab" href="login.html">Login</a></li>
+				    	</ul> <!-- RIGHT MENU -->
+			    	</div>
+		  		</nav>	
+			</div>
+		</div>
+		
+		<div class="row second-row" >
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<img src="images/prison1.jpg" class="img-lg" >
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<table  class="table table-striped table-bordered wholetable">
+					<thead>
+						<tr>
+							<th>Fname</th>
+							<th>Mname</th>
+							<th>Lname</th>
+							<th>PhonNo</th>
+							<th>Address</th>
+							<th>UserName</th>
+							<th>Status</th>
+							<th>Position</th>
+							<th>Action</th>
+							<th>Action</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						{% for pol in pol%}
+						<tr>
+							<td>{{pol.fname}}</td>
+							<td>{{pol.mname}}</td>
+							<td>{{pol.lname}}</td>
+							<td>{{pol.phone}}</td>
+							<td>{{pol.address}}</td>
+							<td>{{pol.userName}}</td>
+							<td>{{pol.status}}</td>
+							<td>{{pol.position}}</td>
+							<td style="color: red;">DELETE</td>
+							<td style="color: green;">EDIT</td>
+						</tr>
+						{% endfor %}
+						
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+		<div class="row" id="system-doc">
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<h3 style="font-size:1.5vw;text-align:center;">ORODHA YA MAGEREZA</h3>
+				<p style="text-align: justify;">ifuatayo ni orodha ya magereza yaliyo zanzibar</p> 
+					<img src="images/magereza.jpg" width="100%" height="222px;">
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<h3 style="font-size:1.5vw;text-align:center;">MAISHA YA MAGEREZA</h3>
+				<p style="text-align: justify;">Mtu anapowasili gerezani anahojiwa na kuchunguzwa ili; Kuelewa sheria na  <a data-toggle="modal" href="#prison-life">countinue</a></p>
+					<img src="images/maisha.jpg" width="100%" height="222px;">
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<h3 style="font-size:1.5vw;text-align:center;">KUTEMBELEA WAFUNGWA</h3>
+				<p style="text-align: justify;">Mtu anapowasili gerezani anahojiwa na kuchunguzwa ili; Kuelewa sheria na <a data-toggle="modal" href="#visit-prisoner">countinue</a></p>
+					<img src="images/kutembea.jpg" width="100%" height="222px;">
+				
+			</div>
+
+
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<h3 style="font-size:1.5vw;text-align:center;">HISTORIA YA JESHI LA MAGEREZA</h3>
+				<p style="text-align: justify;">Jeshi la Magereza lilianzishwa rasmi mwezi Agosti 25,1931 baada ya  <a data-toggle="modal" href="#prisoner-history">countinue</a></p>
+					<img src="images/askari.jpg" width="100%" height="200px;">
+			</div>
+		</div>
+		<div class="row leader-row" style="margin-top: 20px;" id="system-doc">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="row" style="background-color:#E5E4E2;margin-left: 1px;margin-right: 1px;">
+					<div class="col-xs-2 col-sm-2 col-md-2">
+						<h3>Photo</h3>
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4">
+						<h3>Name</h3>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<h3>Title</h3>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<h3>Serving Period</h3>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-xs-2 col-sm-2 col-md-2">
+						<img src="images/CGP.png" width="80px" height="80px">
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4">
+						<p>Mej. othman</p>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<p>Commissioner (cheo) </p>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<p>2020 - To Date</p>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-xs-2 col-sm-2 col-md-2">
+						<img src="images/CGP.png" width="80px" height="80px">
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4">
+						<p>suleiman</p>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<p>Commissioner </p>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<p>2020 - To Date</p>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-xs-2 col-sm-2 col-md-2">
+						<img src="images/CGP.png" width="80px" height="80px">
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4">
+						<p>mohammed</p>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<p>Commissioner </p>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<p>2020 - To Date</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row footer" id="footer">
+			<div class="col-xs-12 col-sm-3 col-md-3" style="color:white;text-align:justify;">
+				<h3>Project Development</h3>
+				<p>The prison management system is a computerized system developed by finalist student (Zafaran) as the one of her parts to accomplish her studies at Mwalimu Nyerere Memory Academy 2021.</p>
+			</div>
+			
+				<div class="col-xs-12 col-sm-1 col-md-1">
+			</div>
+			<div class="col-xs-12 col-sm-2 col-md-2"  style="color:white;">
+				<h3>Social Media</h3>
+				<p><i class="fa fa-facebook fa-1x"> <a class="social-media" href="">Facebook</a></i></p>
+				<p><i class="fa fa-instagram fa-1x"> <a class="social-media" href="">Instagram</a></i></p>
+				<p><i class="fa fa-twitter fa-1x"></i> <a class="social-media" href="">Twitter</a></p>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3" style="color:white;">
+				<h3>Quick Link</h3>
+				<p><a class="quick-link" href="#">Wizara ya mambo ya ndani</a></p>
+				<p><a class="quick-link" href="#">Wizara ya sheria na mambo ya katiba</a></p>
+				<p><a class="quick-link" href="#">Jeshi la polisi Tanzania</a></p>
+				<p><a class="quick-link" href="#">Uhamiaji</a></p>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3" style="color:white;">
+				<h3>Address</h3>
+				<p><i class="fa fa-home"> Bububu, Zanzibar - Tanzania</i></p>
+				<p><i class="fa fa-home"> P.O.BOX 5656</i></p>
+				<p><i class="fa fa-envelope"> bintabdallah22@gmail.com</i></p>
+				<p><i class="fa fa-phone"> +255774486501</i></p>
+			</div>
+		</div>
+		<div class="row copyright">
+			<div class="col-xs-12 col-sm-12 col-md-12" style="color:white; ">
+				<hr>
+				<p style="text-align: center;">&copy 2021 Army Of Prisons, Zanzibar</p>
+			</div>
+		</div>
+	</div>
+</body>
+
+<!-- page script -->
+<script>
+	$(function () {
+        $('#document').DataTable({
+        	pageLength: 4,
+        	bLengthChange: false,
+        	bFilter: false,
+
+        });
+    });
+    
+</script>
+</html>

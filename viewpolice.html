@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<!-- Bootstrap css File -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+    <!-- CSS File -->
+	<style>
+		.sideNav{
+			background-color: cadetblue;
+			color: white;
+			height: 600px;
+			
+		}
+		.head{
+			background-color: cadetblue;
+			height: 50px;
+		}
+		.footer{
+			background-color: cadetblue;
+			height: 50px;
+		}
+		ul li{
+			text-decoration: none;
+			list-style: none;
+			padding: 12px;
+			padding-left: 0;
+			padding-right: 0;
+			text-size-adjust: 12px;
+			padding-right: 0px;
+		}
+		ul li a{
+			color: white;
+		}
+		ul li a:hover{
+			color: goldenrod;
+		}
+        .inner h3{
+            color: red;
+        }
+	</style>
+	
+	
+</head>
+<body>
+	<div class="container-fluid">
+		
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-2 sideNav">
+				<h2 style="color: brown;">Dashbord</h2>
+				<ul>
+					<li><a href="index.html">Home</a> </li>
+                    <li><a href="dash.html">Dashbord</a> </li>
+                    <li><a href="viewPrisoner.html">View Prisoner</a> </li>
+					<li><a href="viewpolice.html">View Police</a></li>
+					<li><a href="register.html">Register Police</a></li>
+					<li><a href="prisoner.html">Register Prisoner</a></li>
+                    <li><a href="login.html">LogOut</a></li>
+				</ul>
+			</div>
+			<div class="col-md-10 content">
+				<div class="row head">
+						<div class="col-md-12">
+						</div>
+		
+				</div>
+                <div class="row inner">
+                    <div class="col-md-12">
+                       <h3>Control Panel | All Prison Polices </h3> 
+                       <div class="row msq">
+                            {{msg}}
+                       </div>
+                       <table  class="table table-striped table-bordered wholetable">
+                        <thead>
+                            <tr>
+                                <th>Fname</th>
+                                <th>Mname</th>
+                                <th>Lname</th>
+                                <th>PhonNo</th>
+                                <th>Address</th>
+                                <th>UserName</th>
+                                <th>Status</th>
+                                <th>Position</th>
+                                <th>Action</th>
+                                <th>Action</th>
+    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for pol in pol%}
+                            <tr>
+                                <td>{{pol.fname}}</td>
+                                <td>{{pol.mname}}</td>
+                                <td>{{pol.lname}}</td>
+                                <td>{{pol.phone}}</td>
+                                <td>{{pol.address}}</td>
+                                <td>{{pol.userName}}</td>
+                                <td>{{pol.status}}</td>
+                                <td>{{pol.position}}</td>
+                                <td style="color: red;">DELETE</td>
+                                <td style="color: green;">EDIT</td>
+                            </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                        
+                    </div>
+                </div>
+			
+			</div>
+		</div>
+		<div class="row footer">
+
+		</div>
+	</div>
+</body>
+</html>

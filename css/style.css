@@ -1,0 +1,23 @@
+.left-col{
+	background-color: black;
+	height: 583px;
+	margin-top: -20px;
+	color: white;
+}
+.right-col{
+	margin-top: -20px;
+}
+.right-inner-col{
+	
+	min-height: 543px;
+}
+.panel{
+	border: none;
+}
+.footer-row{
+	text-align: center;
+	background-color: black;
+	color: white;
+	height: 40px;
+	padding-top: 10px;
+}

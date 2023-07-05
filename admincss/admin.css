@@ -1,0 +1,29 @@
+.sideNav{
+    background-color: cadetblue;
+    color: white;
+    height: 600px;
+    
+}
+.head{
+    background-color: cadetblue;
+    height: 50px;
+}
+.footer{
+    background-color: cadetblue;
+    height: 50px;
+}
+ul li{
+    text-decoration: none;
+    list-style: none;
+    padding: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    text-size-adjust: 12px;
+    padding-right: 0px;
+}
+ul li a{
+    color: white;
+}
+ul li a:hover{
+    color: goldenrod;
+}
